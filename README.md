@@ -322,3 +322,341 @@ OOP tizimlari ba'zan samaradorlikni pasaytirishi mumkin, ayniqsa ob'ektlar va si
 ## Xulosa:
 OOP dasturlash paradigmasi kodning qayta ishlatilishini, modularligini va soddalashtirilishini ta'minlaydi, ammo ba'zi hollarda murakkablik, resurs sarfi va samaradorlik bilan bog'liq kamchiliklarga olib kelishi mumkin.
 
+# -------------------------------------------------------------------
+# Django
+# 11 - question and answer
+## Django nima va nega ishlatiladi?
+Django — yuqori darajadagi Python web framework bo'lib, tez rivojlanishni va to'liq xususiyatli veb-ilovalarni yaratishni qo'llab-quvvatlaydi. Django o'z ichiga ma'lumotlar bazasi, foydalanuvchi autentifikatsiyasi, admin paneli va boshqa ko'plab qurilmalarga ega. Uning asosiy xususiyatlari quyidagilardan iborat:
+
+* MVC/MVT arxitekturasi: Model-View-Template (MVT) arxitekturasi orqali ma'lumotlar, ko'rinishlar va shablonlar ajratiladi.
+* Tez rivojlanish: Django tez rivojlanishni qo'llab-quvvatlaydi va ishlab chiqish jarayonini soddalashtiradi.
+* Qurilgan xususiyatlar: Django o'z ichiga kirish, xavfsizlik, va boshqaruv uchun ko'plab qurilgan xususiyatlarga ega.
+
+# 12 -  question and answer
+## Django'dagi Model-View-Controller (MVC) va Model-View-Template (MVT) o'rtasidagi farq nima?
+Django Model-View-Template (MVT) arxitekturasidan foydalanadi, bu esa MVC (Model-View-Controller) dan farq qiladi:
+
+Model: Ma'lumotlar bazasi tuzilishini belgilaydi va ma'lumotlarni saqlaydi.
+View: Ma'lumotlarni taqdim etadi va foydalanuvchi so'rovlariga javob beradi. Django'da views.py faylida joylashgan.
+Template: HTML shablonlarni yaratadi, bu orqali ma'lumotlarni foydalanuvchiga ko'rsatadi. Django'da templates papkasi orqali boshqariladi.
+MVC modelida esa:
+
+Controller: Ko'rinishlarni (views) ma'lumotlar bilan bog'laydi. Django'da bu vazifani views amalga oshiradi.
+
+# 13-question and answer
+## Django modeli nima?
+Django modeli — ma'lumotlar bazasi tuzilishini belgilaydigan sinfdir. Modelda har bir sinf bir ma'lumotlar bazasi jadvalini ifodalaydi. Modellar models.py faylida yaratiladi va quyidagilarni o'z ichiga oladi:
+
+* Fieldlar: Ma'lumotlar bazasi ustunlarini ifodalaydi (masalan, CharField, IntegerField).
+* Metodlar: Ma'lumotlar bilan bog'liq xatti-harakatlarni amalga oshiradi.
+# 14-question and answer
+## Django qanday qilib ma'lumotlar bazasini migratsiya qiladi?
+Django ma'lumotlar bazasini migratsiya qilish uchun quyidagi buyruqlardan foydalanadi:
+
+* makemigrations: Modifikatsiyalarni aniqlaydi va migratsiya fayllarini yaratadi.
+* migrate: Yaratilgan migratsiya fayllarini ma'lumotlar bazasiga qo'llaydi va bazaning joriy holatini yangilaydi.
+
+# 15-question and answer
+## Django'da QuerySet nima?
+QuerySet — Django ORM orqali ma'lumotlarni olish, filtrlash va manipulyatsiya qilish uchun ishlatiladigan obyektlar to'plamidir. QuerySetlar QuerySet sinfi orqali yaratiladi va ularni quyidagi tarzda ishlatish mumkin:
+
+* Ma'lumotlarni olish: Model.objects.all() kabi metodlar orqali.
+* Filtrlash: Model.objects.filter(field=value) kabi metodlar yordamida.
+* Manipulyatsiya qilish: update(), delete() va boshqa metodlar orqali.
+
+# 16-question and answer
+## Django'dagi GET va POST metodlari o'rtasidagi farq nima?
+* GET: Ma'lumotlarni serverdan olish uchun ishlatiladi. URL orqali parametrlar uzatiladi va ma'lumotlar ko'rinishi uchun ishlatiladi. GET so'rovlar odatda ma'lumotlarni ko'rish uchun qo'llaniladi.
+* POST: Serverga yangi ma'lumotlarni yuborish yoki mavjud ma'lumotlarni yangilash uchun ishlatiladi. POST so'rovlar ko'pincha forma orqali ma'lumotlarni yuborish uchun qo'llaniladi va ko'proq xavfsizdir, chunki ma'lumotlar tanasida yuboriladi.
+
+# 17-question and answer
+## Django middleware nima?
+Middleware — Django ilovasida so'rovlar va javoblarni qamrab oladigan va ular bilan ishlov beradigan komponentdir. Middleware quyidagi vazifalarni bajarishi mumkin:
+
+* So'rovlarni modifikatsiya qilish: So'rovlar kelib tushganda ularni tahlil qilish yoki modifikatsiya qilish.
+* Javoblarni modifikatsiya qilish: Javoblar qaytarilganida ularni tahrirlash yoki ularga qo'shimchalar kiritish.
+* Xavfsizlik: Xavfsizlik tekshiruvlarini amalga oshirish, masalan, CSRF himoyasi.
+Middleware MIDDLEWARE sozlamalari orqali Django loyihasida ro'yxatga olinadi va middleware papkasi yoki faylida joylashadi.
+
+# 18-question and answer
+## Django ORM nima va qanday ishlaydi?
+Django ORM (Object-Relational Mapping) — bu ma'lumotlar bazasi bilan ishlashni soddalashtiruvchi tizim bo'lib, ma'lumotlar bazasidagi jadvallarni Python sinflari bilan bog'laydi. ORM orqali siz Python kodidan ma'lumotlar bazasi so'rovlarini amalga oshirishingiz mumkin, bu esa SQL yozishni osonlashtiradi. Django ORM quyidagilarni o'z ichiga oladi:
+
+* Model: Ma'lumotlar bazasi jadvallarini ifodalaydi. Model sinfi models.Model dan meros oladi.
+* QuerySet: Ma'lumotlarni olish, filtrlash va manipulyatsiya qilish uchun ishlatiladi. Misol uchun, Model.objects.all() barcha yozuvlarni olish uchun ishlatiladi.
+* Migrations: Modeldagi o'zgarishlarni ma'lumotlar bazasiga qo'llash uchun ishlatiladi.
+
+
+# 19-question and answer
+## Django'da qanday qilib maxsus manager yaratish mumkin?
+Maxsus managerlar Django modellari uchun qo'shimcha yoki o'zgartirilgan QuerySet funksiyalarini yaratishga imkon beradi. Maxsus manager yaratish uchun:
+
+1. Manager sinfini yaratish: models.Manager sinfidan meros olish va kerakli metodlarni qo'shish.
+2. Modelga manager qo'shish: Modelda yaratilgan manager sinfini atribut sifatida belgilash.
+Misol:
+```shell
+from django.db import models
+
+class CustomManager(models.Manager):
+    def active(self):
+        return self.filter(is_active=True)
+
+class MyModel(models.Model):
+    is_active = models.BooleanField(default=True)
+    objects = CustomManager()
+
+```
+Bu kod MyModel uchun active metodini qo'shadi, bu metod faqat is_active=True bo'lgan yozuvlarni qaytaradi.
+
+# 20-question and answer
+## Django Form nima va qanday ishlaydi?
+Django forma — foydalanuvchi kiritgan ma'lumotlarni olish va tekshirish uchun ishlatiladigan vositadir. Django formasi quyidagi funksiyalarni bajaradi:
+
+* Forma yaratish: forms.Form yoki forms.ModelForm sinflaridan foydalanib forma sinfini yaratish.
+* Tekshirish: Forma yuborilganda, ma'lumotlarning to'g'riligi va to'liqligini tekshiradi.
+* Shablonlarda ko'rsatish: Formalarni HTML shaklida ko'rsatadi va foydalanuvchi kiritgan ma'lumotlarni qabul qiladi.
+Misol:
+```shell
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    def clean_message(self):
+        message = self.cleaned_data.get('message')
+        if 'spam' in message:
+            raise forms.ValidationError("No spam allowed!")
+        return message
+```
+# 21-question and answer
+## Django'da foydalanuvchi autentifikatsiyasini qanday amalga oshirasiz?
+Django o'z ichki autentifikatsiya tizimini taqdim etadi. Foydalanuvchi autentifikatsiyasi uchun:
+
+* Login: django.contrib.auth moduli orqali login() funksiyasi yordamida foydalanuvchini tizimga kiritish.
+* Logout: logout() funksiyasi yordamida foydalanuvchini tizimdan chiqarish.
+* Registratsiya: Yangi foydalanuvchilarni ro'yxatdan o'tkazish uchun foydalanuvchi formalarini yaratish va saqlash.
+Misol:
+```shell
+from django.contrib.auth import login, logout
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
+```
+# 22-question and answer
+## Django qanday qilib statik fayllarni boshqaradi?
+Django statik fayllarni (CSS, JavaScript, rasm) boshqarishni quyidagi tarzda amalga oshiradi:
+
+* STATIC_URL: Statik fayllarni URL orqali taqdim etish uchun ishlatiladi. Masalan, STATIC_URL = '/static/'.
+* STATICFILES_DIRS: Statik fayllarni saqlash joylarini ko'rsatadi.
+* collectstatic: Statik fayllarni yig'ish va tarqatish uchun ishlatiladi.
+Misol:
+```shell
+# settings.py
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+```
+# 23-question and answe
+## Django'da signals nima?
+Signals — Django ilovasida ayrim voqealar yuz berganda (masalan, model saqlanganda) xabar yuborish uchun ishlatiladi. Signals yordamida kodni ajratish va voqealarga javob berish mumkin. Signals post_save, pre_save kabi signal turlaridan foydalanadi.
+
+Misol:
+```shell
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from .models import MyModel
+
+@receiver(post_save, sender=MyModel)
+def my_model_saved(sender, instance, **kwargs):
+    print(f"{instance} model saqlandi")
+```
+# 24-question and answer
+## Django'ning urls.py fayli qanday ishlaydi?
+urls.py fayli URL marshrutizatsiyasini boshqaradi. U URL'larni views funksiyalari yoki sinflariga moslashtiradi. URL konfigurasiyasi orqali foydalanuvchi so'rovlarini qaysi view tomonidan qayta ishlanishini belgilaydi.
+
+Misol:
+```shell
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+]
+
+```
+# 25-question and answer
+## Django'ning sinfga asoslangan ko'rinishlari (CBV) va funksiyaga asoslangan ko'rinishlar (FBV) o'rtasidagi farq nima?
+* Sinfga asoslangan ko'rinishlar (CBV): Django'da ko'rinishlarni sinflar yordamida yaratish va kengaytirish imkonini beradi. Bu metodlar va attributlar yordamida qayta foydalanish va kengaytirish oson.
+* Funksiyaga asoslangan ko'rinishlar (FBV): Ko'rinishlarni oddiy funksiyalar yordamida yaratish va yozish imkonini beradi. Bu usul oddiyroq va ko'proq nazorat qilish imkoniyatini taqdim etadi.
+Misol (CBV):
+```shell
+from django.views.generic import ListView
+from .models import MyModel
+
+class MyModelListView(ListView):
+    model = MyModel
+    template_name = 'my_model_list.html'
+```
+Misol (FBV):
+```shell
+from django.shortcuts import render
+from .models import MyModel
+
+def my_model_list(request):
+    objects = MyModel.objects.all()
+    return render(request, 'my_model_list.html', {'objects': objects})
+```
+
+# 26-question and answer
+## Django'da ma'lumotlar bazasi so'rovlarini qanday optimallashtirasiz?
+1. select_related(): Bu metod bir-to-bir yoki bir-ko'p munosabatlar bo'ylab so'rovlarni bir martada olish uchun ishlatiladi. Bu ma'lumotlarni olib kelishda qator so'rovlarni kamaytiradi, chunki bog'liq ob'ektlarni birgalikda yuklaydi.
+
+Misol:
+```shell
+# User modelga bog'liq profile modelni olib kelish
+users = User.objects.select_related('profile').all()
+
+```
+2. prefetch_related(): Bu metod ko'p-ko'p munosabatlar bo'ylab ma'lumotlarni olish uchun ishlatiladi. U bog'liq ob'ektlarni alohida so'rovlar orqali olishni amalga oshiradi va ma'lumotlarni "prefetch" qiladi.
+
+Misol:
+```shell
+# User modelga bog'liq barcha postslarni olish
+users = User.objects.prefetch_related('posts').all()
+
+```
+3. N+1 so'rov muammosidan qochish: Bu muammo bir asosiy so'rov bilan birga bog'liq ob'ektlar uchun ortiqcha so'rovlar yuborilishida yuzaga keladi. select_related() va prefetch_related() metodlarini ishlatish orqali bu muammoni oldini olish mumkin.
+
+Misol (N+1 muammosi):
+```shell
+# Bu usul N+1 muammosini keltirib chiqaradi
+for user in User.objects.all():
+    print(user.profile.name)
+```
+Misol (optimizatsiya):
+```shell
+# select_related() orqali optimallashtirish
+users = User.objects.select_related('profile').all()
+for user in users:
+    print(user.profile.name)
+```
+
+# 27-question and answer
+## Django'ning session framework maqsadi nima?
+Django'ning session frameworki foydalanuvchi sessiyalarini boshqarish uchun ishlatiladi. Sessiyalar foydalanuvchi ma'lumotlarini vaqtincha saqlash va server tomonida saqlash imkonini beradi. Django session frameworki quyidagilarni amalga oshiradi:
+
+* Sessiya ma'lumotlarini saqlash: Sessiya ma'lumotlari serverda yoki cookie orqali saqlanadi.
+* Sessiya middleware: Sessiya ma'lumotlarini so'rov va javoblarga qo'shadi va saqlaydi.
+* Sessiya identifikatori: Har bir sessiya uchun noyob identifikator yaratiladi va bu identifikator cookie orqali foydalanuvchi tomonidan yuboriladi.
+Misol:
+```shell
+# Sessiya ma'lumotlarini saqlash
+def set_session(request):
+    request.session['key'] = 'value'
+
+# Sessiya ma'lumotlarini olish
+def get_session(request):
+    value = request.session.get('key', 'default')
+```
+
+# 28-question and answer
+## Django'da fayl yuklashni qanday amalga oshirasiz?
+Django'da fayl yuklashni FileField yoki ImageField yordamida amalga oshirishingiz mumkin. Media fayllarni sozlash uchun MEDIA_URL va MEDIA_ROOT parametrlarini sozlash kerak.
+
+1. Model yaratish:
+```shell
+from django.db import models
+
+class MyModel(models.Model):
+    file = models.FileField(upload_to='files/')
+    image = models.ImageField(upload_to='images/')
+```
+2. Media fayllarni sozlash:
+```shell
+# settings.py
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+```
+3. URL konfiguratsiyasi:
+```shell
+# urls.py
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # Boshqa URL'lar
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+```
+
+# 29-question and answer
+## Django'da REST nima va Django REST Framework (DRF) yordamida RESTful API qanday yaratish mumkin?
+1. REST (Representational State Transfer) - HTTP metodlarini (GET, POST, PUT, DELETE) ishlatib ma'lumotlarni manipulyatsiya qilish va almashish usulidir. RESTful API'lar URL'lar orqali ma'lumotlarni olish va boshqarish imkonini beradi.
+
+2. Django REST Framework (DRF): Django'ga RESTful API yaratish uchun kengaytmadir. DRF yordamida quyidagilarni amalga oshirishingiz mumkin:
+
+* Serializers: Ma'lumotlarni JSON yoki boshqa formatlarga aylantirish.
+* ViewSets: API so'rovlarini boshqarish uchun ko'rsatkichlar.
+* Routers: URL'larni viewsetlarga moslashtirish.
+Misol:
+```shell
+# serializers.py
+from rest_framework import serializers
+from .models import MyModel
+
+class MyModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyModel
+        fields = '__all__'
+
+# views.py
+from rest_framework import viewsets
+from .models import MyModel
+from .serializers import MyModelSerializer
+
+class MyModelViewSet(viewsets.ModelViewSet):
+    queryset = MyModel.objects.all()
+    serializer_class = MyModelSerializer
+
+# urls.py
+from rest_framework.routers import DefaultRouter
+from .views import MyModelViewSet
+
+router = DefaultRouter()
+router.register(r'mymodel', MyModelViewSet)
+
+urlpatterns = [
+    # Boshqa URL'lar
+] + router.urls
+
+```
+
+# 30-question and answer
+## Django ilovalarida xavfsizlikni qanday ta'minlaysiz?
+1. CSRF himoyasi: Django avtomatik ravishda Cross-Site Request Forgery (CSRF) hujumlariga qarshi himoya qiladi. @csrf_protect dekoratori yoki CsrfViewMiddleware middleware orqali qo'shimcha himoya qo'shish mumkin.
+
+2. XSS oldini olish: Cross-Site Scripting (XSS) hujumlaridan himoya qilish uchun Django shablonlari avtomatik ravishda HTML kodlarini xavfsiz holatga keltiradi. Boshqa xavfsiz kod yozish amaliyotlariga amal qiling.
+
+3. Xavfsizlik sozlamalari: Django xavfsizlikni yaxshilash uchun xavfsizlik sozlamalarini, masalan, SECURE_BROWSER_XSS_FILTER, SECURE_CONTENT_TYPE_NOSNIFF, va SECURE_SSL_REDIRECT parametrlarini sozlash kerak.
+
+Misol:
+```shell
+# settings.py
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+X_FRAME_OPTIONS = 'DENY'
+```
