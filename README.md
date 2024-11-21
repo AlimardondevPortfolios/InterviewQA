@@ -95,14 +95,15 @@ Python'da quyidagi asosiy data tiplari mavjud:
 4. str (Matnlar)
 5. list (Ro'yxatlar)
 6. tuple (O'zgarmas ro'yxatlar)
-7. dict (Lug'atlar)
-8. set (To'plamlar)
-9. frozenset (O'zgarmas to'plamlar)
-10. bool (Mantiqiy qiymatlar)
-11. bytes (Baytlar)
-12. bytearray (Baytlar massivlari)
-13. memoryview (Xotira ko'rinishlari)
-14. NoneType (Hech qanday qiymatni anglatmaydi) 
+7. range (x = range(6))
+8. dict (Lug'atlar)
+9. set (To'plamlar)
+10. frozenset (O'zgarmas to'plamlar)
+11. bool (Mantiqiy qiymatlar)
+12. bytes (Baytlar)
+13. bytearray (Baytlar massivlari)
+14. memoryview (Xotira ko'rinishlari)
+15. NoneType (Hech qanday qiymatni anglatmaydi) 
 
 # 4-question and answer
 ## Tuple va Setni qanday farqi bor?
@@ -660,3 +661,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 ```
+
+##  ---------------------------------------------------
+
